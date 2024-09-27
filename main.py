@@ -50,4 +50,4 @@ if st.button('Classify'):
     st.write(f'Sentiment:{sentiment}')
     st.write(f'Prediction Score: {prediction[0][0]}')
 else:
-    st.write(f'please entre a movie review')  
+    st.write('please entre a movie review')  
