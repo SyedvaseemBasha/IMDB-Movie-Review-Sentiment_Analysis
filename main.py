@@ -39,17 +39,16 @@ st.write('Entre a movie review to classify it as positive or negative.')
 user_input = st.text_area('Movie Review')
 
 if st.button('Classify'):
-   if 0 < len(list(user_input)):
-      preprocessed_text = preprocess_text(user_input)
+   preprocessed_text = preprocess_text(user_input)
   
-      #make prediction
-      prediction = model.predict(preprocessed_text)
-      sentiment = 'Positive' if prediction[0][0] > 0.5 else 'Negative'
+   #make prediction
+   prediction = model.predict(preprocessed_text)
+   sentiment = 'Positive' if prediction[0][0] > 0.5 else 'Negative'
   
     
-      #Display the result
-      st.write(f'Sentiment:{sentiment}')
-      st.write(f'Prediction Score: {prediction[0][0]}')
+   #Display the result
+   st.write(f'Sentiment:{sentiment}')
+   st.write(f'Prediction Score: {prediction[0][0]}')
    
 else:
     st.write('please entre a movie review')  
