@@ -46,7 +46,7 @@ if st.button('Classify'):
     prediction = model.predict(preprocessed_text)
     sentiment = 'Positive' if prediction[0][0] > 0.5 else 'Negative'
 
-   if len(user_input)  > 0:
+   if len(preprocessed_text)  >= 0:
       #Display the result
       st.write(f'Sentiment:{sentiment}')
       st.write(f'Prediction Score: {prediction[0][0]}')
